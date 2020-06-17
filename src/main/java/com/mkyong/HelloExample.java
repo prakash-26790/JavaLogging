@@ -9,11 +9,26 @@ public class HelloExample{
 	public static void main(String[] args) {
 	
 		HelloExample obj = new HelloExample();
-		obj.runMe("mkyong");
+		try {
+			obj.runMe("mkyong");
+			System.out.println("-------------Another");
+			obj.processing(5);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
-	private void runMe(String parameter){
+	private void processing(int i) throws InterruptedException {
+		for (int val = 0; val < i; val++)
+		{
+			logger.debug("test Value is : " + val);
+			Thread.sleep(2000);
+		}
+	}
+
+	private void runMe(String parameter) throws InterruptedException{
 		
 		if(logger.isDebugEnabled()){
 			logger.debug("This is debug : " + parameter);
@@ -23,9 +38,12 @@ public class HelloExample{
 			logger.info("This is info : " + parameter);
 		}
 		
-		logger.warn("This is warn : " + parameter);
-		logger.error("This is error : " + parameter);
-		logger.fatal("This is fatal : " + parameter);
+		logger.warn("This is warn 1: " + parameter);
+		logger.error("This is error 1: " + parameter);
+		logger.fatal("This is fatal 1: " + parameter);
+		logger.debug("This is debug 1: " + parameter);
+		logger.info("This is info : 1" + parameter);
+		Thread.sleep(10000);
 		
 	}
 	
