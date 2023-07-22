@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-logs</artifactId>
-			<version>1.11.130</version>
+			<version>1.12.499</version>
 		</dependency>
 		<!-- Thanks for using https://jar-download.com -->
 
